@@ -6,7 +6,7 @@ source /opt/ros/jazzy/setup.bash
 # Ignores additional output because of deprecated Python tooling in ament_python
 export PYTHONWARNINGS="ignore:setup.py install is deprecated,ignore:easy_install command is deprecated"
 
-export ROS_WS=/delib_ws
+export ROS_WS=/edap20
 export WORKSPACE_ROOT=${ROS_WS}	 # For FlexBE compatibility
 
 # Convenience functions

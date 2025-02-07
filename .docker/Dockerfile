@@ -21,7 +21,7 @@ WORKDIR /edap20
 
 # Install external dependencies.
 # Aggregated Python dependencies
-COPY python-requirements.txt /delib_ws
+COPY python-requirements.txt /edap20
 RUN pip3 install --break-system-packages -r python-requirements.txt
 COPY dependencies src/dependencies
 RUN source /opt/ros/jazzy/setup.bash && \

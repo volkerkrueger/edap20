@@ -1,6 +1,6 @@
 # Dockerfile for ROSCon 2024 Deliberation Workshop
 
-FROM ros:jazzy-ros-base AS roscon_delib_ws_2024
+FROM ros:jazzy-ros-base AS edap20_2025
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install apt dependencies.
@@ -16,8 +16,8 @@ RUN apt-get update && \
     ros-jazzy-example-interfaces ros-jazzy-rqt-service-caller
 
 # Create a ROS 2 workspace.
-RUN mkdir -p /delib_ws/src/
-WORKDIR /delib_ws
+RUN mkdir -p /edap20/src/
+WORKDIR /edap20
 
 # Install external dependencies.
 # Aggregated Python dependencies
@@ -38,7 +38,7 @@ RUN curl -o Groot2.AppImage https://s3.us-west-1.amazonaws.com/download.behavior
 RUN curl -O -L https://github.com/convince-project/smc_storm/releases/download/0.0.6/smc_storm_executable.tar.gz && \
     tar -xzf smc_storm_executable.tar.gz && \
     ./install.sh --install-dependencies && \
-    ln -s /delib_ws/bin/smc_storm /usr/local/bin/smc_storm
+    ln -s /edap20/bin/smc_storm /usr/local/bin/smc_storm
 # (AS2FM)
 RUN cd src/dependencies/convince/AS2FM && \
     pip3 install --break-system-packages . && \
